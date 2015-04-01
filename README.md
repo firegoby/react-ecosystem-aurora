@@ -32,13 +32,13 @@ A note on the name: Aurora = A, I fully expect in time for there to be a B, C...
 
 Most things are installed locally via NPM, but a few modules are expected to be available globally
 
-1. Nodemon - `npm install -g nodemon`
+1. Nodemon - **`npm install -g nodemon`**
 
-2. Webpack - `npm install -g webpack`
+2. Webpack - **`npm install -g webpack`**
 
-3. Webpack Dev Server - `npm install -g webpack-dev-server`
+3. Webpack Dev Server - **`npm install -g webpack-dev-server`**
 
-**Note:** Some setups may require global installs to be run with `sudo` e.g. `sudo -E npm install -g nodemon`
+**Note:** Some setups may require global installs to be run with **`sudo`** e.g. **`sudo -E npm install -g nodemon`**
 
 ## Installation
 
@@ -70,11 +70,11 @@ Most things are installed locally via NPM, but a few modules are expected to be 
 
 1. **`npm run build-dev`** - Make webpack build all modules in development mode, output to /public/build/development/ - this command is not usually needed (see `npm run watch`) but is useful if you want to build actual files of your assets (alongwith source maps), perhaps if you need to run your development version on a server without webpack-dev-server installed for some reason. Or just to inspect the un-minified compiled files from Webpack.
 
-2. **`npm run server`** - Run the Express server under Nodemon in production mode on port 80. Not usually called directly as needs to be run with root permissions to listen on port 80, see `npm run build` and npm run production`
+2. **`npm run server`** - Run the Express server under Nodemon in production mode on port 80. Not usually called directly as needs to be run with root permissions to listen on port 80, see **`npm run build`** and **`npm run production`**
 
-3. **`npm run server-dev`** - Run the Express server under Nodemon in development mode on port 3000. Not usually called directly, see `npm run start`, but useful if for instance you want to run Webpack-dev-server and the Express Development server in different terminal windows/separately.
+3. **`npm run server-dev`** - Run the Express server under Nodemon in development mode on port 3000. Not usually called directly, see **`npm run start`**, but useful if for instance you want to run Webpack-dev-server and the Express Development server in different terminal windows/separately.
 
-4. **`npm run watch`** - Run Webpack-dev-server in watch mode on port 3001. Not usually called directly, see `npm run start`, but useful if for instance you want to run Webpack-dev-server and the Express Development server in different terminal windows/separately.
+4. **`npm run watch`** - Run Webpack-dev-server in watch mode on port 3001. Not usually called directly, see **`npm run start`**, but useful if for instance you want to run Webpack-dev-server and the Express Development server in different terminal windows/separately.
 
 ## Contributing
 
