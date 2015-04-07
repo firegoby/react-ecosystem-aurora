@@ -9,21 +9,21 @@ import Router from 'react-router'
 import './shared/main.styl'
 
 // Flux Actions & Stores
-import Flux from './flux'
+import MainFlux from './flux'
 
 // App Components
 import Header from './components/header/header'
 import Home from './components/home/home'
 import About from './components/about/about'
 
-// Create flux instance
-const flux = new Flux()
+// Create main flux instance
+const mainFlux = new MainFlux()
 
 // Define the App Hierarchy
 class App extends React.Component {
     render() {
         return (
-            <FluxComponent flux={flux} connectToStores={{
+            <FluxComponent flux={mainFlux} connectToStores={{
                 messages: store => ({
                     msgs: store.getMessages(),
                     count: store.getCount()
