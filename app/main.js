@@ -1,4 +1,4 @@
-// Main App Entrypoint - rendered in layout of server/views/index.html
+// Main App Entrypoint - rendered within layout of server/views/index.ejs
 import 'babel/polyfill'
 import 'isomorphic-fetch'
 
@@ -7,11 +7,9 @@ import React from 'react'
 import Router from 'react-router'
 
 import performRouteHandlerStaticMethod from './shared/performRouteHandlerStaticMethod'
-
 import Flux from './flux'
 import routes from './routes'
 
-// Create main flux instance
 const flux = new Flux()
 
 const router = Router.create({
@@ -34,12 +32,3 @@ router.run(async function HandleRunner(Handler, state) {
 if(process.env.BROWSER && module.hot) {
     module.hot.accept()
 }
-
-/*
-if (typeof window !== 'undefined') {
-    // Dispatch the Router
-    Router.run(Routes, HistoryLocation, function (Handler) {
-        React.render(<Handler/>, document.getElementById('react-app'))
-    })
-}
-*/

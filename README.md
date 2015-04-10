@@ -6,19 +6,19 @@ A note on the name: Aurora = A, I fully expect in time for there to be a B, C...
 
 ## Features
 
-* React 0.13
-* Isomorphic! - Server-side rendering and serving from a Koa web server
-* Flummox - Flux-based Architecture
-* Webpack - with: -
+* [**React**](https://facebook.github.io/react/) v0.13
+* **Isomorphic!** - Server-side rendering and serving from an Express web server
+* [**Flummox**](http://acdlite.github.io/flummox) - Flux-based Architecture
+* [**Webpack**](http://webpack.github.io/docs/) - with: -
     * development & production configs extending a shared base config
     * auto cache-busting asset hashing/serving for production
     * shared modules are auto-separated into a common.js
-* React Router - with a simple multi-'page', multi component example to get you started
-* Babel - auto-transpiles ES6 & JSX
-* React Hot Loader
-* Autoprefixed Stylus CSS, auto-inserted per-Component require()
-* Koa Web Server - for both production & development
-* Immutable.js
+* [**React Router**](https://github.com/rackt/react-router) - with a simple multi-'page', multi component example to get you started
+* [**Babel**](https://babeljs.io/) - auto-transpiles ES6 & JSX
+* [**React Hot Loader**](http://gaearon.github.io/react-hot-loader/) - Tweak React components in real time
+* [**Autoprefixed**](https://github.com/postcss/autoprefixer), [**Stylus**](https://learnboost.github.io/stylus/) CSS, auto-inserted per-Component require()
+* [**Express**](http://expressjs.com/) Web Server - for both production & development
+* [**Immutable.js**](http://facebook.github.io/immutable-js/)
 * No additional build tool (gulp, grunt, etc) - all managed through NPM scripts
 
 ## To Fix / Previously Working
@@ -48,13 +48,11 @@ A note on the name: Aurora = A, I fully expect in time for there to be a B, C...
 
 ### Primary NPM script commands
 
-1. **`npm start`** - Start both the Koa Server under Nodemon in development mode on port 3000, and also the Webpack Dev Server on port 3001 (the Koa server will automatically proxy the necessary requests to the Webpack Dev Server)
+1. **`npm start`** - Start both the Express Server under Nodemon in development mode on port 3000, and also the Webpack Dev Server on port 3001 (the Express server will automatically proxy the necessary requests to the Webpack Dev Server)
 
 2. **`npm run build`** - Make Webpack build all modules ready for production and output stats.json for hashing/asset info.
 
-3. **`npm run build-server`** - Compile a Node compatible version of the Koa web server, so can be run without `Babel`, just needing `node --harmony --harmony-generators` as per usual for Koa apps.
-
-4. **`npm run production`** - Run the Express server under Nodemon in production mode on port 80, runs via sudo for access to port 80.
+3. **`npm run production`** - Run the Express server under Nodemon in production mode on port 80, runs via sudo for access to port 80.
 
 **IMPORTANT NOTE** - **DO NOT** use **`npm run production`** as a real-world production server, it is a VERY BAD IDEA to run your webserver as root. This command is included *so you can quickly test the production side of the ecosystem, with hashed compiled assets, on a port 80 facing server*. For your proper production environment you should follow more comprehensive instructions, such as [How To Use PM2 to Setup a Node.js Production Environment On An Ubuntu VPS](https://www.digitalocean.com/community/tutorials/how-to-use-pm2-to-setup-a-node-js-production-environment-on-an-ubuntu-vps). Obviously though that is outside the scope of this README.
 

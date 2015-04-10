@@ -22,7 +22,6 @@ class Header extends React.Component {
         return (
             <header className="ns-appHeader">
                 <h1>Welcome to Aurora - A React Ecosystem</h1>
-                <h2>A (attempting to be, one of many possible) ready-to-run, best-practices React App ecosystem</h2>
                 <p className="notice">Work in Progress!</p>
                 {msgs}
                 <input ref="message" type="text"/>
@@ -31,6 +30,7 @@ class Header extends React.Component {
                 <ul>
                     <li><Link to="home">Home</Link></li>
                     <li><Link to="about">About</Link></li>
+                    <li><a href="/notreal">Test NotFound handler</a></li>
                     <li><a href="https://github.com/firegoby/react-ecosystem-aurora" target="_blank">Github Repo</a></li>
                 </ul>
             </header>

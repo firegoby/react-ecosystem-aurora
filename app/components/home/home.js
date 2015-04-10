@@ -6,25 +6,24 @@ export default class Home extends React.Component {
     render() {
         return (
             <article>
-            <h1>Aurora - A React Ecosystem</h1>
             <h2>Features</h2>
             <ul>
-            <li>React 0.13</li>
-            <li>Isomorphic! - Server-side rendering and serving from a Koa web server</li>
-            <li>Flummox - Flux-based Architecture</li>
-            <li>Webpack - with: -
+            <li><a href="https://facebook.github.io/react/"><strong>React</strong></a> v0.13</li>
+            <li><strong>Isomorphic!</strong> - Server-side rendering and serving from an Express web server</li>
+            <li><a href="http://acdlite.github.io/flummox"><strong>Flummox</strong></a> - Flux-based Architecture</li>
+            <li><a href="http://webpack.github.io/docs/"><strong>Webpack</strong></a> - with: -
             <ul>
             <li>development &amp; production configs extending a shared base config</li>
             <li>auto cache-busting asset hashing/serving for production</li>
             <li>shared modules are auto-separated into a common.js</li>
             </ul>
             </li>
-            <li>React Router - with a simple multi-'page', multi component example to get you started</li>
-            <li>Babel - auto-transpiles ES6 &amp; JSX</li>
-            <li>React Hot Loader</li>
-            <li>Autoprefixed Stylus CSS, auto-inserted per-Component require()</li>
-            <li>Koa Web Server - for both production &amp; development</li>
-            <li>Immutable.js</li>
+            <li><a href="https://github.com/rackt/react-router"><strong>React Router</strong></a> - with a simple multi-'page', multi component example to get you started</li>
+            <li><a href="https://babeljs.io/"><strong>Babel</strong></a> - auto-transpiles ES6 &amp; JSX</li>
+            <li><a href="http://gaearon.github.io/react-hot-loader/"><strong>React Hot Loader</strong></a> - Tweak React components in real time</li>
+            <li><a href="https://github.com/postcss/autoprefixer"><strong>Autoprefixed</strong></a>, <a href="https://learnboost.github.io/stylus/"><strong>Stylus</strong></a> CSS, auto-inserted per-Component require()</li>
+            <li><a href="http://expressjs.com/"><strong>Express</strong></a> Web Server - for both production &amp; development</li>
+            <li><a href="http://facebook.github.io/immutable-js/"><strong>Immutable.js</strong></a></li>
             <li>No additional build tool (gulp, grunt, etc) - all managed through NPM scripts</li>
             </ul>
             <h2>To Fix / Previously Working</h2>
@@ -60,13 +59,10 @@ export default class Home extends React.Component {
             <h3>Primary NPM script commands</h3>
             <ol>
             <li>
-            <p><strong><code>npm start</code></strong> - Start both the Koa Server under Nodemon in development mode on port 3000, and also the Webpack Dev Server on port 3001 (the Koa server will automatically proxy the necessary requests to the Webpack Dev Server)</p>
+            <p><strong><code>npm start</code></strong> - Start both the Express Server under Nodemon in development mode on port 3000, and also the Webpack Dev Server on port 3001 (the Express server will automatically proxy the necessary requests to the Webpack Dev Server)</p>
             </li>
             <li>
             <p><strong><code>npm run build</code></strong> - Make Webpack build all modules ready for production and output stats.json for hashing/asset info.</p>
-            </li>
-            <li>
-            <p><strong><code>npm run build-server</code></strong> - Compile a Node compatible version of the Koa web server, so can be run without <code>Babel</code>, just needing <code>node --harmony --harmony-generators</code> as per usual for Koa apps.</p>
             </li>
             <li>
             <p><strong><code>npm run production</code></strong> - Run the Express server under Nodemon in production mode on port 80, runs via sudo for access to port 80.</p>

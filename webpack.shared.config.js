@@ -13,8 +13,7 @@ var definePlugin = new webpack.DefinePlugin({
 
 module.exports = {
     entry: {
-        main: ['./app/main.js'],
-        admin: ['./app/admin.js']
+        main: ['./app/main.js']
     },
     output: {
         filename: '[name].js',
