@@ -1,7 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js')
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
 
 var env = process.env.NODE_ENV || 'development'
 var definePlugin = new webpack.DefinePlugin({
@@ -13,14 +13,15 @@ var definePlugin = new webpack.DefinePlugin({
 
 module.exports = {
     entry: {
-        main: ['./app/main.js']
+        main: ['./app/main.js'],
+        vendor: ['react', 'react-router', 'immutable', 'flummox']
     },
     output: {
         filename: '[name].js',
     },
     module: {
         loaders: [
-            { test: /\.js$/, loaders: ['babel-loader?stage=1'], include: path.join(__dirname, 'app') },
+            { test: /\.js$/, loaders: ['babel-loader?stage=1&optional=runtime'], include: path.join(__dirname, 'app') },
             { test: /\.styl$/, loaders: ['style', 'css', 'autoprefixer', 'stylus'] }
         ]
     },

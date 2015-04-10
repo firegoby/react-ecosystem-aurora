@@ -60,7 +60,7 @@ A note on the name: Aurora = A, I fully expect in time for there to be a B, C...
 
 (*These are not usally invoked directly, see above commands for daily usage*)
 
-1. **`npm run build-dev`** - Make webpack build all modules in development mode, output to /public/build/development/ - this command is not usually needed (see `npm run watch`) but is useful if you want to build actual files of your assets (alongwith source maps), perhaps if you need to run your development version on a server without webpack-dev-server installed for some reason. Or just to inspect the un-minified compiled files from Webpack.
+1. **`npm run build-dev`** - Make webpack build all modules in development mode, output to /public/build/development/ - this command is not usually needed (see `npm run watch`) but is useful if you want to build actual files of your assets (alongwith source maps), perhaps if you need to run your development version on a server without webpack-dev-server installed for some reason. Or just to inspect the un-minified compiled files from Webpack. **WARNING**: If there are files in the `development` directory they will take precedence **OVER** those served by Webpack Dev Server (since Express' static files middleware runs before the proxy middleware), so if you run this command make sure to delete the compiled files once you're done with them and before returning to using webpack-dev-server othersie any changes you make won't be reflected in your browser!
 
 2. **`npm run server`** - Run the Express server under Nodemon in production mode on port 80. Not usually called directly as needs to be run with root permissions to listen on port 80, see **`npm run build`** and **`npm run production`**
 

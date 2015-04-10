@@ -1,5 +1,4 @@
 // Main App Entrypoint - rendered within layout of server/views/index.ejs
-import 'babel/polyfill'
 import 'isomorphic-fetch'
 
 import FluxComponent from 'flummox/component'

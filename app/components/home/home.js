@@ -1,7 +1,5 @@
 import React from 'react'
 
-if (process.env.BROWSER) require('./home.styl')
-
 export default class Home extends React.Component {
     render() {
         return (
