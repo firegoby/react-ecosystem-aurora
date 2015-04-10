@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './about.styl'
+if (process.env.BROWSER) require('./about.styl')
 
 export default class About extends React.Component {
     render() {

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-import './header.styl'
+if (process.env.BROWSER) require('./header.styl')
 
-export default class Header extends React.Component {
+class Header extends React.Component {
     constructor() {
         super()
         this.handleClick = this.handleClick.bind(this)
@@ -21,7 +21,7 @@ export default class Header extends React.Component {
         var msgs = this.props.msgs.map( m => <p key={m.id}>{m.content}</p> )
         return (
             <header className="ns-appHeader">
-                <h1>Welcome to React Ecosystem Aurora</h1>
+                <h1>Welcome to Aurora - A React Ecosystem</h1>
                 <h2>A (attempting to be, one of many possible) ready-to-run, best-practices React App ecosystem</h2>
                 <p className="notice">Work in Progress!</p>
                 {msgs}
@@ -30,10 +30,16 @@ export default class Header extends React.Component {
                 <p>Count: {this.props.count}</p>
                 <ul>
                     <li><Link to="home">Home</Link></li>
-                    <li><Link to="about">About Aurora</Link></li>
+                    <li><Link to="about">About</Link></li>
                     <li><a href="https://github.com/firegoby/react-ecosystem-aurora" target="_blank">Github Repo</a></li>
                 </ul>
             </header>
         )
     }
 }
+
+Header.contextTypes = {
+    router: React.PropTypes.func
+}
+
+export default Header

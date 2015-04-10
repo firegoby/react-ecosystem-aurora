@@ -3,9 +3,12 @@ var webpack = require('webpack')
 
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js')
 
+var env = process.env.NODE_ENV || 'development'
 var definePlugin = new webpack.DefinePlugin({
-    __DEV__: JSON.stringify(JSON.parse(process.env.NODE_ENV !== 'production')),
-    __PRODUCTION__: JSON.stringify(JSON.parse(process.env.NODE_ENV === 'production'))
+    "process.env": {
+        BROWSER: JSON.stringify(true),
+        NODE_ENV: JSON.stringify(env)
+    }
 })
 
 module.exports = {
@@ -18,7 +21,7 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.js$/, loaders: ['babel'], include: path.join(__dirname, 'app') },
+            { test: /\.js$/, loaders: ['babel-loader?stage=1'], include: path.join(__dirname, 'app') },
             { test: /\.styl$/, loaders: ['style', 'css', 'autoprefixer', 'stylus'] }
         ]
     },
@@ -26,5 +29,6 @@ module.exports = {
         commonsPlugin,
         definePlugin,
         new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurenceOrderPlugin()
     ]
 }
